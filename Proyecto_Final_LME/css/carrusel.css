@@ -1,0 +1,90 @@
+#principal-carru{
+    width: 100%; /* el ancho que necesito*/
+    height: auto; /* la altura que necesito*/
+    margin: 0px auto; /* el margen necesario*/
+    box-shadow: -10px -15px 15px #d0ec9c, 10px 10px 15px #d0ec9c; /* la sobra detras de la caja*/
+}
+
+/* Contenedor principal del carrusel */
+.carousel {
+    width: 100%; /* Ocupa todo el ancho del contenedor padre */
+    height: 325px; /* Altura fija del carrusel */
+    overflow: hidden; /* Oculta el contenido que se desborda (para crear efecto de deslizamiento) */
+    border: 1px solid #000000; /* Borde morado */
+    background-color: rgb(0, 0, 0); /* Fondo negro */
+    position: relative; /* Posición relativa para posicionar elementos internos si es necesario */
+}
+
+/* Contenedor de imágenes del carrusel */
+.carousel-img {
+    display: flex; /* Muestra las imágenes en una fila horizontal */
+    animation: scroll 30s linear infinite; /* Aplica animación de desplazamiento infinito hacia la izquierda */
+}
+
+/* Estilo general para las imágenes dentro del carrusel */
+.carousel img {
+    padding: 5px 0.1px 0.1px 5px; /* Espaciado interno alrededor de cada imagen */
+    width: auto; /* Ancho fijo de la imagen */
+    height: 300px; /* Altura fija de la imagen */
+    opacity: 0.4; /* Imagen semi-transparente por defecto */
+    transition: transform 0.4s ease, opacity 0.4s ease; /* Transiciones suaves para zoom y opacidad */
+    flex-shrink: 0; /* Evita que las imágenes se reduzcan al ajustar el tamaño del contenedor */
+}
+
+/* Efecto al pasar el mouse por encima de una imagen */
+.carousel img:hover {
+    transform: scale(1.2); /* Aumenta el tamaño (zoom) de la imagen */
+    opacity: 1; /* Hace la imagen completamente opaca */
+    z-index: 9999; /* Coloca la imagen por encima de las demás */
+}
+
+/* Animación de desplazamiento horizontal */
+/* Animación de desplazamiento horizontal del carrusel */
+@keyframes scroll {
+  0% {
+    transform: translateX(0); /* Inicia desde la posición original (sin desplazamiento) */
+  }
+  100% {
+    transform: translateX(-400%); /* Desplaza todo el contenedor de imágenes hacia la izquierda */
+  }
+}
+
+/*DISEÑO RESPONSIVO (MEDIA QUERIES)  */
+
+/*Tablets (pantallas de hasta 1024px de ancho) */
+@media (max-width: 1024px) {
+    .carousel {
+        height: 250px; /* Reduce la altura del carrusel */
+    }
+
+    .carousel img {
+        height: 225px; /* Ajusta el tamaño de las imágenes dentro del carrusel */
+    }
+}
+
+/*Celulares estándar (pantallas hasta 768px de ancho) */
+@media (max-width: 768px) {
+    .carousel {
+        height: 200px; /* Reduce más la altura del carrusel */
+    }
+
+    .carousel img {
+        height: 180px; /* Ajusta el alto de las imágenes para adaptarse mejor */
+        padding: 3px; /* Reduce el padding para evitar desbordamiento */
+    }
+
+    .carousel img:hover {
+        transform: scale(1.1); /* Reduce el efecto de zoom al hacer hover para que no rompa el diseño en pantallas pequeñas */
+    }
+}
+
+/*Celulares pequeños (hasta 480px de ancho, como algunos Android pequeños o iPhones antiguos) */
+@media (max-width: 480px) {
+    .carousel {
+        height: 160px; /* Carrusel más compacto */
+    }
+
+    .carousel img {
+        height: 140px; /* Imágenes más pequeñas aún */
+    }
+}

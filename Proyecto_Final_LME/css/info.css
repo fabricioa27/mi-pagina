@@ -1,0 +1,153 @@
+/* Contenedor principal del formulario con fondo degradado, sombra y bordes redondeados */
+.form-container {
+    background: linear-gradient(180deg, #7c4600 0%, #333333 100%);
+    backdrop-filter: blur(40px); /* efecto de desenfoque detrás del contenedor */
+    border-radius: 10%; /* bordes redondeados */
+    box-shadow: 0 8px 32px #cbbb75; /* sombra suave */
+    color: #000000; /* color del texto */
+    width: 100%; /* ocupa todo el ancho disponible */
+    max-width: 420px; /* ancho máximo fijo */
+    height: auto; /* altura automática según contenido */
+    margin: 25px auto; /* margen vertical y centrado horizontal */
+    padding: 80px 35px; /* espacio interno alrededor */
+}
+
+/* Estilo para campos de formulario */
+.form-control {
+    background-color: transparent !important; /* fondo transparente */
+    border: 2px solid #f3ad73; /* borde con color dorado claro */
+    color: black !important; /* texto negro */
+    transition: border-color 0.3s ease; /* transición suave para el borde */
+}
+
+/* Estado enfocado del campo, cambia color del borde y elimina outline y sombra */
+.form-control:focus {
+    border-color: #000000; /* borde negro al enfocar */
+    outline: none; /* elimina el contorno por defecto */
+    box-shadow: none; /* elimina sombra */
+}
+
+/* Color del texto del placeholder */
+::placeholder {
+    color: #000000 !important;
+}
+
+/* Icono dentro del formulario, posicionamiento absoluto al lado derecho */
+.icon {
+    position: absolute;
+    top: 50%; /* centrado vertical */
+    right: 15px; /* espacio desde el borde derecho */
+    transform: translateY(-50%); /* ajuste para centrar exactamente */
+    color: #ffffff; /* color del icono */
+    background: linear-gradient(135deg, #cbbb75, #f2ae56); /* fondo degradado dorado */
+    padding: 12px; /* espacio interno */
+    border-radius: 50%; /* forma circular */
+}
+
+/* Estilo para enlaces dentro del formulario, sin subrayado */
+.form-container a {
+    text-decoration: none;
+}
+
+/* Botón principal con fondo degradado y transición para hover */
+.btn-primary {
+    background: linear-gradient(135deg, #cbbb75, #f2ae56);
+    border: none; /* sin borde */
+    transition: background-color 0.3s ease; /* transición suave */
+    color: #000000; /* texto negro */
+}
+
+/* Hover para el botón, mantiene mismo degradado */
+.btn-primary:hover {
+   background: linear-gradient(135deg, #cbbb75, #f2ae56);
+}
+
+/* Media queries para diseño responsivo */
+
+/* Tablets (hasta 1024px) */
+@media (max-width: 1024px) {
+    .form-container {
+        width: 100%; /* ocupa todo el ancho */
+        max-width: none; /* elimina ancho máximo fijo */
+        margin: 15px 0; /* margen vertical reducido */
+        border-radius: 0; /* bordes cuadrados */
+        padding: 40px 20px; /* padding reducido */
+    }
+
+    /* Contenedor principal: organiza en columna para tablets */
+    .contenedor-principal {
+        flex-direction: column; /* Cambia flex de fila a columna */
+        align-items: center; /* Centra elementos horizontalmente */
+        padding: 0; /* Sin padding */
+        gap: 20px; /* Espacio entre elementos */
+    }
+
+    /* Subcontenedores principales con ancho completo */
+    .contenedor-info,
+    .contenedor-derecha {
+        width: 100%; /* Ocupan todo el ancho disponible */
+        margin: 0; /* Sin margen externo */
+        padding: 10px; /* Padding interno para separación */
+    }
+
+    /* Cuadrícula: columnas automáticas con mínimo 60px */
+    .cuadricula {
+        grid-template-columns: repeat(auto-fill, minmax(60px, 1fr)); /* Columnas adaptables */
+    }
+}
+
+/* Media queries para celulares estándar (pantallas hasta 768px) */
+@media (max-width: 768px) {
+
+    /* Contenedor de formulario con padding reducido */
+    .form-container {
+        padding: 30px 15px; /* Menos espacio interior */
+    }
+
+    /* Cuadrícula con columnas más pequeñas, mínimo 50px */
+    .cuadricula {
+        grid-template-columns: repeat(auto-fill, minmax(50px, 1fr)); /* Columnas más pequeñas */
+    }
+
+    /* Botón principal ocupa todo el ancho */
+    .btn-primary {
+        width: 100%; /* Ancho completo para mejor toque */
+    }
+}
+
+/* Media queries para celulares muy pequeños (pantallas hasta 480px) */
+@media (max-width: 480px) {
+
+    /* Contenedor formulario con padding mínimo y bordes cuadrados */
+    .form-container {
+        padding: 20px 10px; /* Menor padding para espacio reducido */
+        border-radius: 0; /* Sin bordes redondeados */
+    }
+
+    /* Cuadrícula con columnas aún más pequeñas, mínimo 40px */
+    .cuadricula {
+        grid-template-columns: repeat(auto-fill, minmax(40px, 1fr)); /* Columnas muy pequeñas */
+    }
+
+    /* Botón con texto más pequeño */
+    .btn-primary {
+        font-size: 14px; /* Tamaño de fuente reducido */
+    }
+}
+
+/* Contenedor principal para escritorio */
+.contenedor-principal {
+    display: flex; /* Usa flexbox */
+    flex-direction: row; /* Dirección horizontal por defecto */
+    justify-content: space-between; /* Espacio entre elementos */
+    width: 100%; /* Ancho completo */
+}
+
+/* Ajuste para tablets: flex en columna y centrado */
+@media (max-width: 1024px) {
+    .contenedor-principal {
+        flex-direction: column; /* Cambia dirección a columna */
+        align-items: center; /* Centra elementos horizontalmente */
+        width: 100%; /* Ancho completo */
+    }
+}

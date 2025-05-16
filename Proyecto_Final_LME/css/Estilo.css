@@ -1,0 +1,365 @@
+/* Reset general para todos los elementos */
+* {
+    margin: 0; /* Elimina el margen por defecto */
+    padding: 0; /* Elimina el padding por defecto */
+    box-sizing: border-box; /* Hace que el tamaño del elemento incluya padding y borde */
+}
+
+/* Estilo para el fondo general del cuerpo */
+#cuerpo {
+    background-image: url(../img/castillo2.jpg); /* Imagen de fondo */
+    background-size: cover; /* Ajusta la imagen para cubrir todo el contenedor */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que se repita la imagen */
+    background-attachment: fixed; /* Mantiene la imagen fija al hacer scroll */
+    height: 100vh; /* Altura completa de la ventana */
+    width: 100%; /* Ancho completo */
+    font-size: 22px; /* Tamaño de fuente base */
+    Line-height: 32px; /* Altura entre líneas */
+    color: #ffffff; /* Color de texto blanco */
+    margin: 0; /* Sin margen */
+    padding: 0; /* Sin padding */
+    font-family: 'Roboto', sans-serif; /* Fuente principal */
+}
+
+/* Fondo semitransparente */
+.fondo {
+    background-color: rgba(0, 0, 0, 0.81); /* Fondo negro con opacidad */
+}
+
+/* Título h2 centrado */
+h2 {
+    text-align: center; /* Centra el texto */
+    font-size: 2rem; /* Tamaño de fuente grande */
+}
+
+/* Contenedor principal de contenido */
+#principal {
+    margin-top: 20px; /* Espacio superior */
+    background-color: rgb(0, 0, 0); /* Fondo negro */
+    color: whitesmoke; /* Texto claro */
+    font-family: Arial, Helvetica, sans-serif; /* Fuente secundaria */
+    font-size: 18px; /* Tamaño de fuente */
+    text-align: justify; /* Justifica el texto */
+    width: 50%; /* Mitad del ancho del contenedor padre */
+    height: auto; /* Altura automática según contenido */
+    margin: 0px auto; /* Centrado horizontal */
+    box-shadow: -5px -7.5px 7.5px #d0ec9c, 5px 7.5px 7.5px #d0ec9c; /* Sombra con efecto tridimensional */
+    display: flex; /* Contenedor flexible */
+    flex-direction: column; /* Apila los hijos en columna */
+    align-items: center; /* Centra horizontalmente */
+    border-radius: 10%; /* Bordes redondeados */
+}
+
+/* Título dentro de principal */
+#principal h1 {
+    text-align: center; /* Centra el texto */
+}
+
+/* Estilo para imagen con opacidad y transición */
+#img1 {
+    max-width: 50%; /* Ancho máximo a la mitad del contenedor */
+    height: auto; /* Altura automática */
+    opacity: 0.4; /* Imagen semi transparente */
+    transition: transform 0.4s ease, opacity 0.4s ease; /* Transición suave */
+    flex-shrink: 0; /* No permite que se reduzca */
+}
+
+/* Al pasar el mouse se hace completamente visible */
+#img1:hover {
+    opacity: 1; /* Totalmente visible */
+}
+
+/* Imagen con ancho máximo del 50% */
+#imgrey {
+    max-width: 50%;
+    height: auto;
+}
+
+/* Imagen más pequeña con mismo efecto de opacidad */
+#img {
+    max-width: 25%;
+    height: auto;
+    opacity: 0.4;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    flex-shrink: 0;
+}
+
+/* Efecto hover de opacidad */
+#img:hover {
+    opacity: 1;
+}
+
+/* Contenedor de texto adicional */
+#uno {
+    padding: 15px; /* Espaciado interno */
+    margin: 10px; /* Margen externo */
+    font-family: Arial, Helvetica, sans-serif; /* Fuente */
+    font-size: 22px; /* Tamaño de texto */
+    text-align: justify; /* Justifica el texto */
+    color: whitesmoke; /* Color claro */
+}
+
+/* Contenedor flexible con separación entre imagen y cuadro */
+.contenedor {
+    display: flex; /* Layout flexible */
+    justify-content: space-between; /* Espacio entre elementos */
+    align-items: flex-start; /* Alinea al inicio del eje cruzado */
+    gap: 20px; /* Separación entre elementos */
+    padding: 5px; /* Padding interno */
+    max-width: 90%; /* Limita el ancho total */
+    margin: 0 auto; /* Centrado horizontal */
+}
+
+/* Estilo para imagen dentro del contenedor */
+.imagen img {
+    background-color: rgba(255, 255, 255, 0); /* Fondo transparente */
+    width: 400px; /* Ancho fijo */
+    height: 350px; /* Altura fija */
+    margin: 0 auto; /* Centrado */
+    padding: 2%; /* Padding interno */
+    opacity: 0.4; /* Imagen semi transparente */
+    transition: transform 0.4s ease, opacity 0.4s ease; /* Transición suave */
+}
+
+/* Al pasar el mouse, se muestra completamente */
+.imagen img:hover {
+    opacity: 1;
+}
+
+/* Tabla para mostrar reyes */
+.tabla-reyes {
+    margin: 40px auto; /* Centrado y separación superior */
+    border-collapse: collapse; /* Bordes unidos */
+    width: 80%; /* Ocupa el 80% del ancho */
+    text-align: center; /* Texto centrado */
+    font-family: sans-serif; /* Fuente */
+}
+
+/* Celdas y cabecera de la tabla */
+.tabla-reyes th, .tabla-reyes td {
+    border: 1px solid #3f3b3b; /* Borde gris oscuro */
+    padding: 10px; /* Padding interno */
+}
+
+/* Cabecera de la tabla */
+.tabla-reyes th {
+    background-color: #31261f; /* Fondo oscuro */
+    color: white; /* Texto blanco */
+}
+
+/* Filas pares con color alternado */
+.tabla-reyes tr:nth-child(even) {
+    background-color: #d0ec9c; /* Verde claro */
+    color: black; /* Texto negro */
+}
+
+/* Contenedor del carrusel de texto */
+.carrusel {
+    height: 30px; /* Altura del carrusel */
+    overflow: hidden; /* Oculta el contenido que se sale */
+    position: relative; /* Posición relativa para animación */
+}
+
+/* Texto animado en carrusel */
+.carrusel-texto {
+    display: inline-block; /* Bloque en línea */
+    animation: mover 20s infinite; /* Animación continua */
+    white-space: nowrap; /* No se permite el salto de línea */
+}
+
+/* Animación de desplazamiento vertical */
+@keyframes mover {
+    0%   { transform: translateY(0%); }     /* Comienza en la posición original */
+    20%  { transform: translateY(0%); }     /* Permanece en la primera línea un poco de tiempo */
+    25%  { transform: translateY(-25%); }   /* Se desplaza hacia la segunda línea */
+    45%  { transform: translateY(-25%); }   /* Se mantiene en la segunda línea */
+    50%  { transform: translateY(-50%); }   /* Se desplaza hacia la tercera línea */
+    70%  { transform: translateY(-50%); }   /* Se mantiene en la tercera línea */
+    75%  { transform: translateY(-75%); }   /* Se desplaza hacia la cuarta línea */
+    95%  { transform: translateY(-75%); }   /* Se mantiene en la cuarta línea */
+    100% { transform: translateY(0%); }     /* Vuelve a la posición original para reiniciar */
+}
+
+/* Línea auxiliar para el carrusel */
+.linea {
+    height: 30px;
+}
+
+/* Pie de página */
+#pie {
+    background: linear-gradient(to bottom, #8a1717, #470000); /* Gradiente rojo oscuro */
+    width: 100%; /* Ancho completo */
+    height: 60px; /* Altura fija */
+    font-family: Arial, Helvetica, sans-serif; /* Fuente */
+    color: white; /* Texto blanco */
+    text-align: center; /* Texto centrado */
+    font-size: 12pt; /* Tamaño inicial */
+    padding-top: 15px; /* Separación superior */
+    font-size: 1em; /* Equivalente a 16px normalmente */
+}
+
+/* Contenedor para formulario u otra info */
+.contenedor-principal {
+    display: flex; /* Layout flexible */
+    justify-content: space-between; /* Espaciado horizontal */
+    align-items: flex-start; /* Alineación al inicio */
+    width: 100%; /* Ancho completo */
+    padding: 4%; /* Padding interno */
+}
+
+/* Contenedor de información a la izquierda */
+.contenedor-info {
+    align-content: center; /* Centra el contenido */
+    width: 80%; /* Ancho relativo */
+    box-shadow: -10px -15px 15px #cbbb75, 10px 10px 15px #cbbb75; /* Sombra decorativa */
+    background-color: rgb(0, 0, 0); /* Fondo negro */
+    color: white; /* Texto blanco */
+    padding: 20px; /* Padding interno */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+/* Columna derecha (imagen y cuadrícula) */
+.contenedor-derecha {
+    width: 80%; /* Ancho relativo */
+    display: flex; /* Flexible */
+    flex-direction: column; /* Dirección columna */
+    align-items: center; /* Centrado vertical */
+    justify-content: center; /* Centrado horizontal */
+    padding: 20px; /* Padding interno */
+}
+
+/* Imagen dentro del contenedor derecho */
+.imagen img {
+    width: 100%; /* Ancho completo */
+    max-width: 800px; /* Máximo tamaño */
+}
+
+/* Cuadrícula decorativa o de contenido */
+.cuadricula {
+    box-shadow: -10px -15px 15px #cbbb75, 10px 10px 15px #cbbb75;
+    background-color: #000000;
+    color: white;
+    padding: 1.5%;
+    display: grid;
+    border-radius: 15px;
+}
+
+/* Cuadros individuales dentro de la cuadrícula */
+.cuadro {
+    width: 80px;
+    height: 80px;
+    background-color: lightgray;
+    border: 1px solid black;
+}
+
+/* Lista dentro del contenedor-info */
+.contenedor-info ul {
+    list-style: none; /* Sin viñetas */
+    padding: 0;
+    text-align: center; /* Centra el texto */
+}
+
+/* Elementos de la lista */
+.contenedor-info li {
+    margin: 5px 0; /* Separación vertical */
+}
+
+/*Media Quare*/
+
+@media (max-width: 1024px) {
+    /* Secciones principales se adaptan al ancho completo */
+    #principal,
+    .contenedor-info,
+    .contenedor-derecha {
+        width: 100%; /* Ocupa todo el ancho disponible */
+        margin: 0; /* Elimina márgenes externos */
+        padding: 0 10px; /* Agrega un pequeño espacio horizontal */
+    }
+
+    /* Contenedor cambia a diseño de columna para mejor visualización vertical */
+    .contenedor {
+        flex-direction: column; /* Apila los elementos verticalmente */
+        gap: 10px; /* Reduce la separación entre elementos */
+        width: 100%; /* Ocupa todo el ancho */
+        padding: 0 10px; /* Agrega padding horizontal */
+    }
+
+    /* Imagen se adapta al 100% del ancho disponible */
+    .imagen img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Tabla se expande para ocupar el ancho disponible */
+    .tabla-reyes {
+        width: 100%;
+    }
+}
+
+/* Celulares (pantallas hasta 768px) */
+@media (max-width: 768px) {
+    /* Secciones principales con ajustes similares a tablets */
+    #principal,
+    .contenedor-info,
+    .contenedor-derecha {
+        width: 100%; /* Ancho completo */
+        margin: 0;
+        padding: 0 10px;
+    }
+
+    /* Diseño en columna para los contenedores */
+    .contenedor {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    /* Imagen adaptativa */
+    .imagen img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Tabla ajusta su tamaño y reduce fuente para mejor lectura */
+    .tabla-reyes {
+        width: 100%;
+        font-size: 14px; /* Tamaño de texto más pequeño */
+    }
+
+    /* Cuadros reducen su tamaño para pantallas pequeñas */
+    .cuadro {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* Celulares muy pequeños (hasta 480px) */
+@media (max-width: 480px) {
+    /* Secciones principales con menos padding */
+    #principal,
+    .contenedor-info,
+    .contenedor-derecha {
+        width: 100%;
+        margin: 0;
+        padding: 0 8px; /* Padding aún más reducido */
+    }
+
+    /* Texto en tabla aún más pequeño para pantallas reducidas */
+    .tabla-reyes {
+        font-size: 12px;
+    }
+
+    /* Cuadros más pequeños aún */
+    .cuadro {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Pie de página ajusta tamaño de fuente y espaciado */
+    #pie {
+        font-size: 0.8em; /* Reduce el tamaño del texto */
+        padding-top: 10px; /* Reduce el espacio superior */
+    }
+}

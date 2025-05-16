@@ -1,0 +1,208 @@
+/* Oculta los elementos con clase 'toggle' y los inputs cuyo id empieza con 'drop' */
+label.toggle, [id^=drop] {
+    display: none; /* No se muestran */
+}
+
+/* Estilo básico para el menú de navegación */
+nav {
+    margin: 0; /* Sin margen externo */
+    padding: 0; /* Sin padding interno */
+    background: linear-gradient(to bottom, #8a1717, #470000); /* Degradado rojo oscuro */
+}
+
+/* Estilo del logo dentro del nav */
+#logo {
+    display: block; /* Se muestra como bloque */
+    padding: 0 30px; /* Padding horizontal */
+    float: right; /* Flota a la derecha */
+    font-size: 20px; /* Tamaño de letra */
+    line-height: 60px; /* Altura de línea para centrar verticalmente */
+}
+
+/* Estilo para la imagen o elemento con clase 'escudo' */
+.escudo {
+    padding-right: 8px; /* Espacio a la derecha */
+    padding-top: 2px; /* Espacio arriba */
+    float: right; /* Flota a la derecha */
+    width: 50px; /* Ancho fijo */
+    height: 50px; /* Alto fijo */
+}
+
+/* Lista principal de navegación */
+nav ul {
+    float: left; /* Flota a la izquierda */
+    padding: 0; /* Sin padding */
+    margin: 0; /* Sin margen */
+    list-style: none; /* Sin viñetas */
+    position: relative; /* Posición relativa para submenús */
+}
+
+/* Items principales del menú */
+nav ul li {
+    margin: 0px; /* Sin margen */
+    display: inline-block; /* En línea pero como bloque */
+    float: left; /* Flotan a la izquierda */
+    background: linear-gradient(to bottom, #8a1717, #470000); /* Fondo degradado */
+}
+
+/* Estilo de los enlaces del menú */
+nav a {
+    display: block; /* Como bloque para toda área clickeable */
+    padding: 0 20px; /* Padding horizontal */
+    color: #FFF; /* Texto blanco */
+    font-size: 20px; /* Tamaño de fuente */
+    line-height: 60px; /* Altura de línea para centrar verticalmente */
+    text-decoration: none; /* Sin subrayado */
+}
+
+/* Cambio de fondo al pasar el mouse sobre los enlaces */
+nav a:hover {
+    background-color: #000000; /* Fondo negro al hover */
+}
+
+/* Submenús ocultos por defecto */
+nav ul ul {
+    display: none; /* No se muestran inicialmente */
+    position: absolute; /* Posición absoluta */
+    top: 60px; /* Debajo del menú principal */
+}
+
+/* Mostrar submenú cuando el padre está en hover */
+nav ul li:hover > ul {
+    display: block; /* Muestra el submenú */
+}
+
+/* Estilos para items del segundo nivel de menú */
+nav ul ul li {
+    background: #470000; /* Fondo sólido oscuro */
+    width: 170px; /* Ancho fijo */
+    float: none; /* No flotan */
+    display: block; /* Bloque para toda área clickeable */
+    position: relative; /* Para posicionar sub-submenús */
+}
+
+/* Estilos para items del tercer nivel de menú */
+nav ul ul ul li {
+    background: #470000; /* Fondo oscuro */
+    position: relative; /* Posición relativa */
+    top: -60px; /* Ajuste vertical */
+    left: 170px; /* Desplazamiento horizontal para desplegar lateral */
+}
+
+/* Limpia flotados dentro de nav */
+nav:after {
+    content: ""; /* Contenido vacío */
+    display: block; /* Se comporta como bloque */
+    clear: both; /* Limpia flotados anteriores */
+}
+
+/* Media query para pantallas pequeñas (hasta 768px) */
+@media all and (max-width: 768px) {
+
+    /* Nav sin margen */
+    nav {
+        margin: 0;
+    }
+
+    /* Logo con display inline-block y alineado a la derecha */
+    #logo {
+        display: inline-block;
+        padding: 0 0 0 20px; /* Padding izquierdo */
+        text-align: right;
+        margin-right: 40px; /* Margen derecho */
+    }
+
+    /* Items del menú como bloques verticales */
+    nav ul li {
+        display: block; /* En bloque para apilar verticalmente */
+        width: 100%; /* Ancho completo */
+        border-top: 1px solid white; /* Línea superior blanca */
+    }
+
+    /* Muestra el label toggle para menú hamburguesa */
+    label.toggle {
+        display: block; /* Visible */
+        background-color: #442525; /* Fondo oscuro violeta */
+        padding: 0 20px; /* Padding horizontal */
+        color: #FFF; /* Texto blanco */
+        font-size: 20px; /* Tamaño de texto */
+        line-height: 60px; /* Altura de línea */
+        text-decoration: none; /* Sin subrayado */
+        border: none; /* Sin borde */
+        cursor: pointer; /* Cursor puntero */
+    }
+
+    /* Icono del toggle con fondo semitransparente */
+    label.icono {
+        background-color: rgba(27, 1, 41, 0.597); /* Fondo semitransparente */
+        border-left: 1px solid white; /* Línea izquierda */
+        display: inline-block; /* En línea bloque */
+        float: left; /* Flotado a la izquierda */
+    }
+
+    /* Efecto hover para toggle */
+    .toggle:hover {
+        background-color: #13001895; /* Fondo semitransparente al pasar mouse */
+    }
+
+    /* Menú oculto por defecto en móvil */
+    .menu {
+        display: none; /* Oculto */
+    }
+
+    /* Mostrar menú cuando el checkbox está marcado */
+    [id^=drop]:checked + ul {
+        display: block; /* Se muestra */
+        width: 100%; /* Ancho completo */
+    }
+
+    /* Oculta enlace siguiente al toggle */
+    .toggle + a {
+        display: none; /* Oculto */
+    }
+
+    /* Submenús en móvil sin flotados y posición estática */
+    nav ul ul {
+        float: none; /* Sin flotados */
+        position: static; /* Posición normal */
+        color: #FFFFFF; /* Texto blanco */
+    }
+
+    /* Items de submenú en móvil */
+    nav ul ul li {
+        display: block; /* Bloque */
+        width: 100%; /* Ancho completo */
+    }
+
+    /* Items de sub-submenú en móvil */
+    nav ul ul ul li {
+        position: static; /* Posición normal */
+    }
+
+    /* Evita mostrar submenús al hacer hover en móvil */
+    nav ul ul li:hover > ul,
+    nav ul li:hover > ul {
+        display: none; /* Oculto */
+    }
+
+    /* Padding para elementos toggle y enlaces en submenús */
+    nav ul ul .toggle, nav ul ul a {
+        padding: 0 40px; /* Espaciado horizontal */
+    }
+
+    /* Padding extra para tercer nivel */
+    nav ul ul ul a {
+        padding: 0 80px; /* Mayor sangría */
+    }
+
+    /* Cambio de color al pasar mouse en móviles */
+    nav a:hover, nav ul ul ul a {
+        background-color: #230000; /* Fondo violeta oscuro */
+    }
+
+    /* Fondo oscuro para toggles y enlaces en submenú */
+    nav ul li ul li .toggle,
+    nav ul ul a {
+        background-color: #2a0101; /* Fondo más oscuro */
+    }
+}
